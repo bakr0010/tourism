@@ -1,0 +1,157 @@
+/* Fonts*/
+@font-face { font-family: "Inter"; font-weight: 300; src: url("assets/fonts/inter-latin-300-normal.woff2") format("woff2"); }
+@font-face { font-family: "Inter"; font-weight: 400; src: url("assets/fonts/inter-latin-400-normal.woff2") format("woff2"); }
+@font-face { font-family: "Inter"; font-weight: 500; src: url("assets/fonts/inter-latin-500-normal.woff2") format("woff2"); }
+@font-face { font-family: "Karma"; font-weight: 300; src: url("assets/fonts/karma-latin-300-normal.woff2") format("woff2"); }
+@font-face { font-family: "Karma"; font-weight: 400; src: url("assets/fonts/karma-latin-400-normal.woff2") format("woff2"); }
+
+:root {
+    --ink: #222;
+    --muted: #9b9b9b;
+    --yellow: #fff700;
+    --soft: #f7f7f7;
+    --wrap: 1120px;
+}
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+body { font-family: "Inter", sans-serif; font-weight: 300; color: var(--ink); background: #fff; }
+a { color: inherit; text-decoration: none; }
+img { display: block; width: 100%; }
+p { font-family: "Karma", serif; font-weight: 300; color: var(--muted); font-size: 17px; line-height: 1.55; }
+h1, h2, h3 { font-weight: 300; }
+h2 { font-size: 28px; }
+h3 { font-size: 20px; font-weight: 400; }
+
+
+
+/* Header */
+.header {
+    aspect-ratio: 1920 / 700;
+    min-height: 700px;
+    background: url("assets/images/header-road.png") center top / cover no-repeat;
+    padding: 0 max(24px, calc((100% - var(--wrap)) / 2));
+}
+.nav { height: 154px; display: flex; align-items: center; justify-content: space-between; }
+.logo { position: relative; font-size: 44px; font-weight: 400; line-height: 64px; z-index: 0; }
+.logo::before {
+    content: ""; position: absolute; z-index: -1;
+    left: 50px; top: 0; width: 64px; height: 64px; border-radius: 50%;
+    background: var(--yellow);
+}
+.navbtns { display: flex; align-items: center; gap: 80px; font-size: 14px; font-weight: 400; }
+.search { color: #777; margin-left: -20px; }
+
+.hero { padding-top: 61px; }
+.hero h1 { font-size: 112px; line-height: 1.1; letter-spacing: 0; }
+.hero p { width: 480px; margin-top: 52px; font-size: 18px; line-height: 1.45; }
+.btn-dark {
+    display: inline-flex; align-items: center; justify-content: center;
+    width: 170px; height: 56px; margin-top: 52px;
+    background: var(--ink); color: #fff; font-size: 14px; font-weight: 400;
+}
+
+
+
+
+/* About */
+.about {
+    aspect-ratio: 1920 / 700;
+    min-height: 700px;
+    background: url("assets/images/forest-bg.jpg") center 62% / cover no-repeat;
+    padding: max(224px, 11.667vw) max(24px, calc((100% - var(--wrap)) / 2)) 0;
+}
+.about-card { display: flex; height: 427px; background: #fff; }
+.about-card img { width: 384px; height: 100%; object-fit: cover; object-position: center 73%; flex: none; }
+.about-text { flex: 1; display: flex; flex-direction: column; align-items: center; padding: 78px 108px 0; text-align: center; }
+.about-text h2 { font-size: 30px; line-height: 36px; }
+.about-text p { margin-top: 39px; font-size: 17px; line-height: 27px; }
+.link-line { margin-top: 51px; padding: 8px 14px; border-bottom: 2px solid var(--ink); font-size: 14px; font-weight: 400; }
+
+
+
+
+/* Features */
+.features {
+    display: grid; grid-template-columns: repeat(3, 1fr);
+    width: 1300px; max-width: 100%; margin: 0 auto; height: 580px; padding-top: 130px;
+}
+.feature { display: flex; flex-direction: column; align-items: center; text-align: center; }
+.feature p { width: 260px; margin-top: 14px; font-size: 16px; }
+.circle { width: 160px; height: 160px; border-radius: 50%; background: var(--soft); display: grid; place-items: center; color: var(--ink); }
+.f-pointer .circle, .f-map .circle { margin-bottom: 42px; }
+.f-plane .circle { margin-top: 42px; }
+
+
+
+/* Places */
+.place-images { display: grid; grid-template-columns: 39.0625% 21.77% 1fr; grid-template-rows: minmax(0, 1fr); aspect-ratio: 1920 / 500; }
+.place-images img { height: 100%; min-height: 0; object-fit: cover; }
+.pi-1 { object-position: 0 41%; }
+.pi-2 { object-position: 71% 0; }
+.pi-3 { object-position: 0 0; }
+.place-texts {
+    display: grid; grid-template-columns: repeat(3, 352px); gap: 32px; justify-content: center;
+    padding: 36px 0 0; height: 334px;
+}
+.place:nth-child(1) { text-align: left; }
+.place:nth-child(2) { text-align: center; }
+.place:nth-child(3) { text-align: right; }
+.place p { margin: 18px 0 20px; font-size: 16px; width: 250px; }
+.place:nth-child(2) p { margin-left: auto; margin-right: auto; }
+.place:nth-child(3) p { margin-left: auto; }
+.link-line.small { display: inline-block; margin-top: 0; padding: 6px 8px; font-size: 12px; border-bottom-width: 1px; }
+
+
+
+
+/* Hotels */
+.hotels { background: #fafafa; height: 912px; padding: 76px 24px 0; text-align: center; }
+.hotel-grid { display: grid; grid-template-columns: repeat(3, 352px); gap: 32px; justify-content: center; margin-top: 66px; }
+.hotel { background: #fff; padding-bottom: 42px; }
+.hotel img { height: auto; aspect-ratio: 352 / 200; object-fit: cover; object-position: bottom; }
+.hotel h3 { margin-top: 36px; font-size: 20px; }
+.hotel p { margin: 22px auto 0; width: 260px; font-size: 16px; }
+.price { position: relative; margin: 34px 36px 0; font-weight: 400; font-size: 16px; }
+.price::before { content: ""; position: absolute; left: 0; right: 0; top: 50%; border-top: 1px solid #ddd; }
+.price span { position: relative; background: #fff; padding: 0 22px; }
+.btn-outline {
+    display: inline-flex; align-items: center; justify-content: center;
+    width: 170px; height: 56px; margin-top: 34px; border: 1px solid var(--ink);
+    font-size: 13px; font-weight: 400;
+}
+.arrows { margin-top: 68px; display: flex; justify-content: center; gap: 90px; }
+.arrows button { background: none; border: 0; font-size: 20px; cursor: pointer; color: var(--ink); }
+
+
+
+
+/* Footer */
+.footer {
+    height: 180px; display: flex; align-items: center; justify-content: space-between;
+    padding: 0 max(24px, calc((100% - var(--wrap)) / 2));
+}
+.footer-links { display: flex; gap: 42px; font-size: 13px; font-weight: 400; flex: 1; }
+.footer-brand { text-align: center; flex: 1; }
+.logo-grey { font-size: 28px; color: #a5a5a5; font-weight: 300; }
+.footer small { font-size: 9px; color: #b5b5b5; font-weight: 300; }
+.social { display: flex; gap: 40px; justify-content: flex-end; flex: 1; color: #999; }
+
+
+
+
+/* Small screens */
+@media (max-width: 1100px) {
+    .hero h1 { font-size: 72px; }
+    .about { aspect-ratio: auto; height: auto; padding-bottom: 60px; }
+    .about-card { flex-direction: column; height: auto; }
+    .about-card img { width: 100%; height: 320px; }
+    .about-text { padding: 40px 24px; }
+    .features { grid-template-columns: 1fr; height: auto; gap: 40px; padding: 60px 24px; }
+    .place-images { grid-template-columns: 1fr; aspect-ratio: auto; height: auto; }
+    .place-images img { height: 260px; }
+    .place-texts, .hotel-grid { grid-template-columns: 1fr; padding: 32px 24px; height: auto; }
+    .place:nth-child(n) { text-align: center; }
+    .place p { margin-left: auto !important; margin-right: auto !important; }
+    .hotels { height: auto; padding-bottom: 60px; }
+    .footer { height: auto; flex-direction: column; gap: 24px; padding: 40px 24px; }
+}
